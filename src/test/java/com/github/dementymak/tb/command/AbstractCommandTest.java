@@ -5,7 +5,6 @@ import com.github.dementymak.tb.service.SendBotMessageService;
 import com.github.dementymak.tb.service.SendBotMessageServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.mockito.internal.verification.VerificationModeFactory;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;

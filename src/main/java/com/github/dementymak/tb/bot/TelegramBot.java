@@ -2,6 +2,8 @@ package com.github.dementymak.tb.bot;
 
 import com.github.dementymak.tb.command.CommandContainer;
 import com.github.dementymak.tb.service.SendBotMessageServiceImpl;
+import com.github.dementymak.tb.service.TelegramUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -9,9 +11,6 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 import static com.github.dementymak.tb.command.CommandName.NO;
 
-/**
- * Telegram bot for Javarush Community from Javarush community.
- */
 @Component
 public class TelegramBot extends TelegramLongPollingBot {
 
@@ -25,8 +24,9 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     private final CommandContainer commandContainer;
 
-    public TelegramBot() {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this));
+    @Autowired
+    public TelegramBot(TelegramUserService telegramUserService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
     }
 
     @Override

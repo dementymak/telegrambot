@@ -1,6 +1,8 @@
 package com.github.dementymak.tb.bot;
 
 import com.github.dementymak.tb.command.CommandContainer;
+import com.github.dementymak.tb.javarushclient.JavaRushGroupClient;
+import com.github.dementymak.tb.service.GroupSubService;
 import com.github.dementymak.tb.service.SendBotMessageServiceImpl;
 import com.github.dementymak.tb.service.TelegramUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +27,8 @@ public class TelegramBot extends TelegramLongPollingBot {
     private final CommandContainer commandContainer;
 
     @Autowired
-    public TelegramBot(TelegramUserService telegramUserService) {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
+    public TelegramBot(TelegramUserService telegramUserService, JavaRushGroupClient groupClient, GroupSubService groupSubService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService, groupClient, groupSubService);
     }
 
     @Override

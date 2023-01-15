@@ -13,8 +13,10 @@ public class StartCommand implements Command {
     private final SendBotMessageService sendBotMessageService;
     private final TelegramUserService telegramUserService;
 
-    public final static String START_MESSAGE = "Привет. Я Telegram Bot. Я помогу тебе быть в курсе последних " +
-            "статей тех авторов, котрые тебе интересны. Я еще маленький и только учусь.";
+    public final static String START_MESSAGE = "Привет. Я Javarush Telegram Bot.\n " +
+            "Я помогу тебе быть в курсе последних статей тех авторов, которые тебе интересны.\n\n" +
+            "Нажимай /addGroupSub чтобы подписаться на группу статей в JavaRush.\n" +
+            "Не знаешь о чем я? Напиши /help, чтобы узнать что я умею.";
 
     // Здесь не добавляем сервис через получение из Application Context.
     // Потому что если это сделать так, то будет циклическая зависимость, которая

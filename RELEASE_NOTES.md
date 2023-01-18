@@ -1,9 +1,14 @@
 # Release Notes
 
+
+## 0.6.0-SNAPSHOT
+
+*   TB-7: added the ability to delete group subscription.
+
 ## 0.5.0-SNAPSHOT
 
-*   JRTB-5: added ability to subscribe on group
-*   JRTB-6: added ability to get a list of group subscriptions.
+*   TB-5: added ability to subscribe on group
+*   TB-6: added ability to get a list of group subscriptions.
 
 ## 0.4.0-SNAPSHOT
 
